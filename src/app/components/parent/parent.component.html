@@ -1,0 +1,22 @@
+<div class="title1">
+@if (titleVisible) {
+<div class="title1">
+<h1>C'est un titre</h1>
+</div>
+}
+<app-enfant [titleVisible]="titleVisible" (changeValue)="changeVisibleTitle($event)"></app-enfant>
+</div>
+
+<div class="title2">
+  <div class="title2">
+
+  <h1>{{title1}}</h1>
+
+
+  <button class = "btn btn-secondary" (click) = "change()">Clic</button>
+  </div>
+  </div>
+
+  <app-autre-enfant [titleA1]="titleA1" [titleA2]="titleA2"></app-autre-enfant>
+
+

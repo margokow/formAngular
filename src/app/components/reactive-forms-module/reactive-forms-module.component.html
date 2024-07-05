@@ -1,0 +1,36 @@
+<h2>Formulaire</h2>
+
+<form [formGroup]="article" (ngSubmit)="onSubmit()">
+
+  <label>
+    Designation:
+    <input type="text" formControlName="designation">
+    @if (submitted && form['designation'].invalid) {
+      <span>Designation requise</span>
+    }
+    @if (form['designation'].hasError('minlength')) {
+      <span>designation doit avoir au minimum 3 lettres</span>
+    }
+    @if (form['designation'].hasError('pattern')) {
+      <span>designation ne doit contenir que des lettres</span>
+    }
+  </label>
+
+  <label>
+    Prix:
+    <input type="number" formControlName="prix">
+    @if (submitted && form['prix'].invalid) {
+      <span>Prix requis</span>
+    }
+  </label>
+  <button type="submit">Ajouter</button>
+
+  <!--Le bouton sera grisé -->
+  <!-- <button [disabled]="!article.valid" type="submit">Ajouter</button> -->
+</form>
+
+@for (item of articles; track $index) {
+  <p>{{item.designation}} {{item.prix}}</p>
+}
+
+<p>Total : {{totalPrice}}</p>

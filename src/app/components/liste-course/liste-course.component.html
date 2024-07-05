@@ -1,0 +1,25 @@
+<h2>Liste de course</h2>
+
+<form (ngSubmit)="addArticle()">
+  <input type="text" name="newArticle" [(ngModel)] = "newArticle">
+  <button type="submit">Ajouter</button>
+</form>
+
+<table class=" table mt-1">
+  <thead>
+      <tr>
+        <th scope="col">Article</th>
+      </tr>
+    </thead>
+    <tbody>
+
+@for (article of articles; track $index) {
+  <tr>
+    <td>{{article}}</td>
+  </tr>
+
+} @empty {
+  <p>Il n'y a pas d'article.</p>
+}
+    </tbody>
+</table>

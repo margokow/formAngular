@@ -1,0 +1,12 @@
+<h3 class="mt-4">Exemple de carte utilisateur</h3>
+
+@for (info of infos; track $index) {
+  <div class="card mt-5">
+    <h5 class="card-header">{{info.nom}} {{info.prenom}}</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{info.email}}</h5>
+    <p class="card-text">{{info.entreprise}}</p>
+    <p class="card-text">{{info.telephone}}</p>
+  </div>
+  </div>
+}
